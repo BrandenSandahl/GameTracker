@@ -10,6 +10,7 @@ public class Main {
    static HashMap<String, User> users = new HashMap<>();
 
     public static void main(String[] args) {
+        Spark.externalStaticFileLocation("public");
         Spark.init();
 
 
@@ -31,6 +32,7 @@ public class Main {
                 "/create-user",
                 ((request, response) -> {
                     String name = request.queryParams("loginName");
+                    if (name == null) throw new Exception("Login name is null") ;
                     User user = users.get(name);
                     if (user == null) {
                         user = new User(name);
@@ -60,6 +62,10 @@ public class Main {
                     String gameGenre = request.queryParams("gameGenre");
                     String gamePlatform = request.queryParams("gamePlatform");
                     int gameYear = Integer.parseInt(request.queryParams("gameYear"));
+                    if (gameName == null || gameGenre == null || gamePlatform == null ) {
+                        throw new Exception("didn't receive query params");
+
+                    }
 
                     //create a game
                     Game game = new Game(gameName, gameGenre, gamePlatform, gameYear);
@@ -89,7 +95,6 @@ public class Main {
     static User getUserFromSession(Session session) {
         String name = session.attribute("userName");
         return  users.get(name);
-
     }
 
 }

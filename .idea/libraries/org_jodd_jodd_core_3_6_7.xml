@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="org.jodd:jodd-core:3.6.7" type="repository">
+    <properties maven-id="org.jodd:jodd-core:3.6.7" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jodd/jodd-core/3.6.7/jodd-core-3.6.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
