@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <meta charset="UTF-8">
     <title>Home</title>
 </head>
@@ -26,14 +27,14 @@
         <option value="xbone">Xbox One</option>
         <option value="wiiu">Wii U</option>
     </select>
-    <input type="number" name="gameYear" placeholder="Release Yeaer" />
+    <input type="number" name="gameYear" placeholder="Release Year" />
     <button type="submit">Submit</button>
 </form>
 
 <ol>
     {{#games}}
     <li>
-        {{name}} - {{genre}} - {{platform}} - {{releaseYear}}
+        {{name}} - {{genre}} - {{platform}} - {{releaseYear}} - <a href="/edit?id={{id}}">Edit</a>  <form action="/delete" method="post"><input name="id" type="hidden" value="{{id}}"><button type="submit">Delete</button></form>
     </li>
     {{/games}}
 </ol>

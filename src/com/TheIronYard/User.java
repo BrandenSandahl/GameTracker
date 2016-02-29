@@ -8,10 +8,21 @@ import java.util.ArrayList;
 public class User {
 
     String name;
+    Boolean hasGames = false;
     ArrayList<Game> games = new ArrayList<>();
 
 
     public User(String name) {
         this.name = name;
     }
+
+
+    public Boolean getHasGames() {
+        return hasGames;
+    }
+
+    public void setHasGames(Boolean hasGames) {
+        this.hasGames = hasGames;
+    }
 }
+

@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="style.css" rel="stylesheet" type="text/css" />
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Edit Page</title>
 </head>
 <body>
-<form action="/logout" method="post">
-    <button type="submit">Logout</button>
-</form>
 
-
-<form action="/create-game" method="post">
-    <input type="text" placeholder="game name" name="gameName" width="200"/>
+<form action="/edit-game" method="post">
+    <fieldset>
+        <legend>Editing {{name}}</legend>
+    <input type="text" placeholder="game name"  value="{{name}}" name="gameName" width="200"/>
     <select name="gameGenre">
         <option selected disabled>Genre</option>
         <option value="adventure">Adventure</option>
@@ -27,17 +24,10 @@
         <option value="xbone">Xbox One</option>
         <option value="wiiu">Wii U</option>
     </select>
-    <input type="number" name="gameYear" placeholder="Release Year" />
+    <input type="number" name="gameYear" value="{{releaseYear}}" placeholder="Release Year" />
     <button type="submit">Submit</button>
+    </fieldset>
 </form>
-
-<ol>
-    {{#games}}
-    <li>
-        {{name}} - {{genre}} - {{platform}} - {{releaseYear}} - <a href="/edit?id={{id}}">Edit</a>  <form action="/delete" method="post"><input name="id" type="hidden" value="{{id}}"><button type="submit">Delete</button></form>
-    </li>
-    {{/games}}
-</ol>
 
 </body>
 </html>
