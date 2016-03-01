@@ -38,6 +38,12 @@
     </li>
     {{/games}}
 </ol>
+<form action="/search" method="post">
+    <fieldset>
+        <legend>Search for titles</legend>
+        <label for="searchTitleInput">Title:</label> <input type="text" placeholder="Enter Title" name="searchTitleInput" /><button type="submit">Search</button><a href="/"><button type="button">Reset</button></a>
+    </fieldset>
+</form>
 
 </body>
 </html>

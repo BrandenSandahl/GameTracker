@@ -9,7 +9,7 @@
 <form action="/edit-game" method="post">
     <fieldset>
         <legend>Editing {{name}}</legend>
-    <input type="text" placeholder="game name"  value="{{name}}" name="gameName" width="200"/>
+    <label for="gameName">Game Name</label> <input type="text" placeholder="game name"  value="{{name}}" name="gameName" width="200"/>
     <select name="gameGenre">
         <option selected disabled>Genre</option>
         <option value="adventure">Adventure</option>
@@ -24,7 +24,8 @@
         <option value="xbone">Xbox One</option>
         <option value="wiiu">Wii U</option>
     </select>
-    <input type="number" name="gameYear" value="{{releaseYear}}" placeholder="Release Year" />
+    <label for="gameYear">Game Year</label><input type="number" name="gameYear" value="{{releaseYear}}" placeholder="Release Year" />
+        <input type="hidden" value="{{id}}" name="id" />
     <button type="submit">Submit</button>
     </fieldset>
 </form>
